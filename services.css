@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Ubuntu:wght@500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://img.freepik.com/premium-photo/3d-rendering-black-dumbbells-floor-dark-concept-fitness-room-with-training-equipments-back_67155-14961.jpg?w=1380');
+    background-size: cover;
+    background-position: center;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+}
+a:hover{
+    color: orange;
+}
+
+
+/* Header */
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: orange;
+}
+.navbar .links{
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar .toogle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+
+.content{
+    border: 4px solid black;
+    width: 100%;
+}
+
+footer{
+    border: 4px solid red;
+    width: 100%;
+}
+
+/* Dropdown Menu */
+
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hero */
+#content{
+    display: flex;
+    margin-top: 6vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 3px solid red; */
+    height: 80vh;
+}
+.box2 h7{
+    font-size: 3rem;
+    color: #fff;
+}
+.box2 p{
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.box2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+.big_box{
+    /* border: 3px solid green; */
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    z-index: -1;
+}
+
+.box1{
+    border: 3px solid white;
+    width: 27%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_box img{
+    width: 40%;
+    height: calc(width);
+    border-radius: 50%;
+
+}
+.box1 p{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.box1 h7{
+    font-size: 2rem;
+    color: white;
+}
+
+/* Responsive Design */
+
+@media (max-width:992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .toogle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    section#hero{
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        text-align: left;
+        color: #fff;
+        /* border: 4px solid red; */
+        margin-left: 8rem;
+    }
+    
+    #hero h1{
+        font-size: 3rem;
+        /* margin-bottom: rem; */
+    }
+    #hero p{
+        font-size: 1.5rem;
+    }
+    .box1{
+        width: 32%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .box1 p{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-size: 0.7rem;
+    }
+    .box1 h7{
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+@media (max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+    section#hero{
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        text-align: left;
+        color: #fff;
+        /* border: 4px solid red; */
+        margin-left: 2rem;
+    }
+    
+    #hero h1{
+        font-size: 2rem;
+        /* margin-bottom: rem; */
+    }
+    #hero p{
+        font-size: 1rem;
+    }
+    #content{
+        margin-top: 10vh;
+    }
+    .box2 h7{
+        font-size: 2rem;
+    }
+    .box2 p{
+        font-size: 0.8rem;
+    }
+    .big_box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25vh;
+    }
+    .box1{
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1vh;
+    }
+}
